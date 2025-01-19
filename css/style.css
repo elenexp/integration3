@@ -1,11 +1,52 @@
 @import url("reset.css");
 
+:root {
+  --color-bg: #F2EFE9;
+  --color-blue: #91BAE2;
+  --color-darkpink: #B10B3A;
+  --color-brown: #C79F79;
+  --color-darkbrown: #36372F;
+}
+
 html {
   box-sizing: border-box;
 }
-*, *::before, *::after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+}
 
+body {
+  background-color: var(--color-bg);
+}
 
+.header_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  padding: 0.5rem;
+}
+
+.nav_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.balance {
+  justify-self: center;
+}
+
+.menu {
+  justify-self: end;
+}
