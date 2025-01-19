@@ -6,6 +6,11 @@
   --color-darkpink: #B10B3A;
   --color-brown: #C79F79;
   --color-darkbrown: #36372F;
+
+  --fontsize-m: clamp(1rem, 0.9492rem + 0.2198vw, 1.125rem);
+  --fontsize-l: clamp(1.5rem, 0.8901rem + 2.6374vw, 3rem);
+  --fontsize-xl: clamp(1.875rem, 1.011rem + 3.7363vw, 4rem);
+  ;
 }
 
 html {
@@ -23,8 +28,43 @@ img {
   max-width: 100%;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 body {
   background-color: var(--color-bg);
+  color: var(--color-darkbrown);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: var(--fontsize-xl);
+}
+
+p {
+  font-size: var(--fontsize-m);
+  line-height: 1.4;
+}
+
+.title, .scroll {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.header_title--small {
+  font-size: var(--fontsize-l);
+}
+
+.header_title {
+  margin-top: 5rem;
 }
 
 .header_wrapper {
@@ -35,6 +75,9 @@ body {
 
 .nav {
   padding: 0.5rem;
+  padding-bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
 .nav_list {
@@ -49,4 +92,64 @@ body {
 
 .menu {
   justify-self: end;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: var(--color-darkpink);
+
+}
+
+.header_bottom--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.arrow {
+  animation: MoveUpDown 2s linear infinite;
+
+}
+
+@keyframes MoveUpDown {
+  0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(10px);
+    }
+}
+
+@media only screen and (min-width: 55em) {
+  .header_bottom--wrapper {
+    display: grid;
+    grid-template-columns: 30% 20% 30%;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-evenly;
+  }
+
+  .scroll {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .visit_link {
+    grid-column: 3;
+  }
+
+  .header_title {
+    margin-top: 3rem;
+  }
 }
