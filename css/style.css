@@ -5,20 +5,16 @@
   --color-brown: #C79F79;
   --color-darkbrown: #36372F;
 
-  --fontsize-m: clamp(1rem, 0.9492rem + 0.2198vw, 1.125rem);
-  --fontsize-l: clamp(1.125rem, 1.0742rem + 0.2198vw, 1.25rem);
+  --fontsize-s: clamp(1rem, 0.9492rem + 0.2198vw, 1.125rem);
+
+  --fontsize-m: clamp(1.125rem, 1.0742rem + 0.2198vw, 1.25rem);
+  --fontsize-l: clamp(1.375rem, 1.2225rem + 0.6593vw, 1.75rem);
   --fontsize-xl: clamp(1.875rem, 1.4176rem + 1.978vw, 3rem);
   --fontsize-xxl: clamp(2.25rem, 1.5385rem + 3.0769vw, 4rem);
+  --fontsize-xxxl: clamp(4rem, 3.0852rem + 3.956vw, 6.25rem);
 
-  --whitespace-2xs: clamp(0.3125rem, 0.25rem + 0.3125vw, 0.5rem);
-  --whitespace-xs: clamp(0.5rem, 0.4167rem + 0.4167vw, 0.75rem);
-  --whitespace-s: clamp(0.625rem, 0.5rem + 0.625vw, 1rem);
-  --whitespace-m: clamp(0.9375rem, 0.75rem + 0.9375vw, 1.5rem);
-  --whitespace-l: clamp(1.25rem, 1rem + 1.25vw, 2rem);
-  --whitespace-xl: clamp(1.875rem, 1.5rem + 1.875vw, 3rem);
-  --whitespace-2xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
-  --whitespace-3xl: clamp(3.75rem, 3rem + 3.75vw, 6rem);
 
+  --space-xs: clamp(0.5rem, 0.4167rem + 0.4167vw, 0.75rem);
   --space-s: clamp(2rem, 27.3187rem + -31.6484vw, 20rem);
 
 }
@@ -62,7 +58,7 @@ h1 {
 }
 
 p {
-  font-size: var(--fontsize-m);
+  font-size: var(--fontsize-s);
   line-height: 1.4;
 }
 
@@ -131,7 +127,7 @@ h2 {
 }
 
 .header_bottom--wrapper {
-  padding: var(--whitespace-xs);
+  padding: var(--space-xs);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,7 +179,7 @@ h2 {
 }
 
 .shape_text {
-  font-size: var(--fontsize-l);
+  font-size: var(--fontsize-m);
 }
 
 .antwerp {
@@ -191,6 +187,29 @@ h2 {
   padding-bottom: 2rem;
   padding-top: var(--space-s);
 
+
+}
+
+.job_title--small {
+  font-size: var(--fontsize-l);
+}
+
+.job_title--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-self: start;
+}
+
+.job_title_number {
+  border-bottom: 1px solid var(--color-darkbrown);
+  font-size: var(--fontsize-xxxl);
+  padding: 0.5rem 1rem;
+  line-height: 0.8;
+  background-image: url(../public/assets/img/paper.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
 }
 
@@ -210,7 +229,23 @@ h2 {
   }
 }
 
-@media only screen and (min-width: 40em) {}
+@media only screen and (min-width: 31em) {
+  .job_title--wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-self: start;
+    }
+
+    .job_title_number {
+      border-right: solid var(--color-darkbrown);
+      border-bottom: none;
+      padding: 0rem 1.5rem;
+    }
+
+    .job_title {
+      padding: 0rem 1rem;
+    }
+}
 
 @media only screen and (min-width: 55em) {
 
@@ -254,7 +289,7 @@ h2 {
   }
 
   .antwerp {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 }
