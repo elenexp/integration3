@@ -50,6 +50,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-darkbrown);
   font-family: Helvetica, Arial, sans-serif;
+
 }
 
 h1 {
@@ -196,15 +197,15 @@ h2 {
 
 .job_title--wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  flex-direction: row;
+  align-items: center;
   justify-self: start;
 }
 
 .job_title_number {
-  border-bottom: 1px solid var(--color-darkbrown);
+  border-right: 1px solid var(--color-darkbrown);
   font-size: var(--fontsize-xxxl);
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   line-height: 0.8;
   background-image: url(../public/assets/img/paper.png);
   background-size: contain;
@@ -212,6 +213,45 @@ h2 {
   background-position: center;
 
 }
+
+.job_title {
+  padding: 0rem 1rem;
+}
+
+.p_horizontal--scroll {
+  font-size: var(--fontsize-xxxl);
+  margin-left: 18px;
+  white-space: nowrap;
+  color: var(--color-brown);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.job_corrector {
+  position: relative;
+
+}
+
+.horizontal--scroll--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  overflow-x: hidden;
+
+
+
+
+}
+
+.eye {
+  width: 200px;
+  z-index: 1;
+
+  right: -15%;
+
+}
+
+
+
 
 
 
@@ -229,23 +269,10 @@ h2 {
   }
 }
 
-@media only screen and (min-width: 31em) {
-  .job_title--wrapper {
-      flex-direction: row;
-      align-items: center;
-      justify-self: start;
-    }
 
-    .job_title_number {
-      border-right: solid var(--color-darkbrown);
-      border-bottom: none;
-      padding: 0rem 1.5rem;
-    }
 
-    .job_title {
-      padding: 0rem 1rem;
-    }
-}
+
+
 
 @media only screen and (min-width: 55em) {
 
@@ -291,5 +318,15 @@ h2 {
   .antwerp {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+
+  .job_section {
+    margin: 0rem 0rem;
+  }
+
+  .eye {
+    width: 435px;
+    z-index: 1;
+    position: static;
   }
 }
