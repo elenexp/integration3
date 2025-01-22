@@ -9,13 +9,13 @@
         trigger: ".job_corrector",
         start: "top 30%",
         end: "bottom 30%",
-        markers: {
-          startColor: "purple",
-          endColor: "fuchsia",
-          fontSize: "1rem",
-          indent: 100,
-          fontWeight: "bold",
-        },
+        //markers: {
+        //  startColor: "purple",
+        //  endColor: "fuchsia",
+        //  fontSize: "1rem",
+        //  indent: 100,
+        //  fontWeight: "bold",
+        //},
         scrub: 0.5,
         pin: "p_horizontal--scroll",
       },
@@ -29,4 +29,3 @@
   };
   init();
 }
-

@@ -15,7 +15,7 @@
       <ul class="nav_list">
         <li class="nav_item logo"><a class="nav_item--link" href="#0"><img src="./public/assets/img/logoplantin.png"
               alt="logo" width="64"></a></li>
-        <li class="nav_item balance"><a class="nav_item--link" href="#0">Earnings</a></li>
+        <li class="nav_item balance"><a class="nav_item--link earnings" href="#0">Earnings: <span class="earnings--number">0</span></a></li>
         <li class="nav_item menu"><a class="nav_item--link" href="#0"></a><img src="./public/assets/img/hamburger.svg"
             alt=""></li>
       </ul>
@@ -75,20 +75,58 @@
 
     </section>
     <section class="job_section job_corrector">
-      <div class="job_title--wrapper title">
+      <div class="job_title--wrapper title margin">
         <p class="job_title_number pink">1</p>
         <h2 class="job_title"><span class="job_title--small">No room for mistakes</span><br>the <span
             class="pink">corrector's</span> job
         </h2>
       </div>
-      <p>Before any text can be printed, it must pass through your hands as the corrector, ensuring every page is free of
-        errors. Your role is vital to maintaining the quality and reputation of my works.</p>
-      <p>The corrector used a standardised set of symbols or annotations to mark errors directly on the proof copy. To ensure no
-        error goes unnoticed, you’ll be going over every</p>
-        <div class="horizontal--scroll--wrapper">
-          <p class="p_horizontal--scroll">Detail, pagination, punctuation, accents, spelling, abbreviations, and fonts</p>
-          <img class="eye" src="./public/assets/img/eye.avif" width="435" alt="">
+      <div class="corrector_description--wrapper margin">
+        <p class="corrector_description_p1">Before any text can be printed, it must pass through your hands as the
+          corrector, ensuring every page is free of
+          errors. Your role is vital to maintaining the quality and reputation of my works.</p>
+        <p class="corrector_description_p2">The corrector used a standardised set of symbols or annotations to mark
+          errors directly on the proof copy. To ensure no
+          error goes unnoticed, you’ll be going over every</p>
+      </div>
+      <div class="horizontal--scroll--wrapper">
+        <p class="p_horizontal--scroll">Detail, pagination, punctuation, accents, spelling, abbreviations, and fonts</p>
+        <img class="eye" src="./public/assets/img/eye.avif" width="435" alt="">
+      </div>
+      <div class="corrector_interaction">
+        <h2 class="title">Now it's your turn</h2>
+        <div class="corrector_interaction--wrapper">
+          <div class="audio">
+            <p>Let me assist you</p>
+            <svg class="audio_button" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="27.5" cy="27.5" r="25.5" stroke="#B10B3A" stroke-width="4" />
+              <path d="M43 27.5L19 41.7894L19 13.2106L43 27.5Z" fill="#B10B3A" />
+            </svg>
+          </div>
+          <div class="error_text--wrapper">
+            <p class="error_state pink"><span class="error_state--number">0</span>/3 errors found</p>
+            <p class="error_text">“<span class="word">In</span> <span class="word">the</span> <span
+                class="word">beginning</span> <span class="word">God</span> <span class="word">created</span> <span
+                class="word">the</span> <span class="word error_word">heavans</span> <span class="word">and</span> <span
+                class="word">the</span> <span class="word">earth</span>. <span class="word">And</span> <span
+                class="word">the</span> <span class="word">earth</span> <span class="word">was</span> <span
+                class="word">without</span> <span class="word">form</span>, <span class="word">and</span> <span
+                class="word">void</span>; <span class="word">and</span>
+              <span class="word">darkness</span> <span class="word">was</span> <span class="word">upon</span> <span
+                class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
+                class="word">the</span> <span class="word">deep</span>. <span class="word">And</span> <span
+                class="word">the</span> <span class="word">Spirit</span> <span class="word">of</span> <span
+                class="word">God</span> <span class="word error_word">mooved</span> <span class="word">upon</span> <span
+                class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
+                class="word">the</span> <span class="word">waters</span>. <span class="word">And</span> <span
+                class="word">God</span> <span class="word">said</span>, '<span class="word">Let</span> <span
+                class="word">there</span> <span class="word">be</span> <span class="word">light</span>:' <span
+                class="word">and</span> <span class="word error_word">their</span> <span class="word">was</span> <span
+                class="word">light</span>.”
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <section class="job_section">
       <div class="job_title--wrapper title">
@@ -98,7 +136,7 @@
         </h2>
 
       </div>
-      
+
     </section>
     <section class="job_section">
       <div class="job_title--wrapper title">
@@ -112,7 +150,9 @@
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/gsap.js"></script>
+
 </body>
 
 </html>
