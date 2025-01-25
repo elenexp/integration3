@@ -15,8 +15,13 @@
       <ul class="nav_list">
         <li class="nav_item logo"><a class="nav_item--link" href="#0"><img src="./assets/img/logoplantin.png" alt="logo"
               width="64"></a></li>
-        <li class="nav_item balance"><a class="nav_item--link earnings" href="#0">Earnings: <span
-              class="earnings--number">0</span></a></li>
+        <li class="nav_item earnings">
+          Earnings: <span class="earnings--number">0</span><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9.5" r="8.5" stroke="#36372F" />
+            <circle cx="9" cy="9.5" r="7" fill="#36372F" />
+          </svg>
+        </li>
         <li class="nav_item menu"><a class="nav_item--link" href="#0"></a><img src="./assets/img/hamburger.svg" alt="">
         </li>
       </ul>
@@ -41,6 +46,25 @@
 
 
   <main>
+    <div class="earnings_popup visually-hidden">
+      <div class="close_popup">
+        <svg width="35" height="35" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 18L18 1" stroke="#36372F" stroke-width="1" />
+          <path d="M18 18L1 1" stroke="#36372F" stroke-width="1" />
+        </svg>
+      </div>
+      <div class="earnings_content">
+        <p class="popup_title"><span class="job_name">Corrector</span> job completed!</p>
+        <p>You earned <span class="amount">12</span> stuivers</p>
+        <div class="add_earnings">
+          <p>+ <span class="amount">12</span></p>
+          <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9.5" r="8.5" stroke="#36372F" />
+            <circle cx="9" cy="9.5" r="7" fill="#36372F" />
+          </svg>
+        </div>
+      </div>
+    </div>
     <section class="intro">
       <div class="intro_title--wrapper">
         <h2 class="title title_intro pink">Antwerp, 1550</h2>
@@ -100,38 +124,45 @@
         </div>
       </section>
       <section class="corrector_interaction margin">
-        <h3 class="title">Now it's your turn</h3>
+        <h3 class="title corrector_interaction_title">Now it's your turn, find the <span class="pink">errors</span> <br>
+          and let the <span class="pink">lector</span> assist you</h3>
         <div class="corrector_interaction--wrapper">
-          <div class="audio">
-            <p>Let me assist you</p>
-            <svg class="audio_button" width="55" height="55" viewBox="0 0 55 55" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <circle cx="27.5" cy="27.5" r="25.5" stroke="#B10B3A" stroke-width="4" />
-              <path d="M43 27.5L19 41.7894L19 13.2106L43 27.5Z" fill="#B10B3A" />
-            </svg>
-          </div>
           <div class="error_text--wrapper">
-            <p class="error_state pink interaction_status"><span class="error_state--number ">0</span>/3 errors found
-            </p>
-            <p class="error_text">“<span class="word">In</span> <span class="word">the</span> <span
-                class="word">beginning</span> <span class="word">God</span> <span class="word">created</span> <span
-                class="word">the</span> <span class="word error_word">heavans</span> <span class="word">and</span> <span
-                class="word">the</span> <span class="word">earth</span>. <span class="word">And</span> <span
-                class="word">the</span> <span class="word">earth</span> <span class="word">was</span> <span
-                class="word">without</span> <span class="word">form</span>, <span class="word">and</span> <span
-                class="word">void</span>; <span class="word">and</span>
-              <span class="word">darkness</span> <span class="word">was</span> <span class="word">upon</span> <span
-                class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
-                class="word">the</span> <span class="word">deep</span>. <span class="word">And</span> <span
-                class="word">the</span> <span class="word">Spirit</span> <span class="word">of</span> <span
-                class="word">God</span> <span class="word error_word">mooved</span> <span class="word">upon</span> <span
-                class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
-                class="word">the</span> <span class="word">waters</span>. <span class="word">And</span> <span
-                class="word">God</span> <span class="word">said</span>, '<span class="word">Let</span> <span
-                class="word">there</span> <span class="word">be</span> <span class="word">light</span>:' <span
-                class="word">and</span> <span class="word error_word">their</span> <span class="word">was</span> <span
-                class="word">light</span>.”
-            </p>
+            <p class="interaction_text">Find the errors in the text below and click on them.</p>
+            <div>
+              <p class="error_state pink interaction_status"><span class="error_state--number ">0</span>/3 errors found
+              </p>
+              <p class="error_text">“<span class="word">In</span> <span class="word">the</span> <span
+                  class="word">beginning</span> <span class="word">God</span> <span class="word">created</span> <span
+                  class="word">the</span> <span class="word error_word">heavans</span> <span class="word">and</span>
+                <span class="word">the</span> <span class="word">earth</span>. <span class="word">And</span> <span
+                  class="word">the</span> <span class="word">earth</span> <span class="word">was</span> <span
+                  class="word">without</span> <span class="word">form</span>, <span class="word">and</span> <span
+                  class="word">void</span>; <span class="word">and</span>
+                <span class="word">darkness</span> <span class="word">was</span> <span class="word">upon</span> <span
+                  class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
+                  class="word">the</span> <span class="word">deep</span>. <span class="word">And</span> <span
+                  class="word">the</span> <span class="word">Spirit</span> <span class="word">of</span> <span
+                  class="word">God</span> <span class="word error_word">mooved</span> <span class="word">upon</span>
+                <span class="word">the</span> <span class="word">face</span> <span class="word">of</span> <span
+                  class="word">the</span> <span class="word">waters</span>. <span class="word">And</span> <span
+                  class="word">God</span> <span class="word">said</span>, '<span class="word">Let</span> <span
+                  class="word">there</span> <span class="word">be</span> <span class="word">light</span>:' <span
+                  class="word">and</span> <span class="word error_word">their</span> <span class="word">was</span> <span
+                  class="word">light</span>.”
+              </p>
+            </div>
+          </div>
+          <div class="lector--wrapper">
+            <div class="audio">
+              <p class="title">Play the audio to <br>let me read the correct text</p>
+              <svg class="audio_button" width="55" height="55" viewBox="0 0 55 55" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="27.5" cy="27.5" r="25.5" stroke="#B10B3A" stroke-width="4" />
+                <path d="M43 27.5L19 41.7894L19 13.2106L43 27.5Z" fill="#B10B3A" />
+              </svg>
+            </div>
+            <img class="lector" src="./assets/img/lector.svg" alt="">
           </div>
         </div>
       </section>
@@ -239,8 +270,9 @@
         <img class="book" src="./assets/img/printedbook.svg" width="375.71" alt="">
       </section>
       <section class="printer_interaction margin">
-        <h3 class="title">Now it’s your turn again, a sheet of paper needs to be printed</h3>
-        <p>Keep clicking on the button to steady the bar in the blue zone</p>
+        <h3 class="title">Now it’s your turn again, a sheet of <span class="pink">paper</span> needs to be <span
+            class="pink">printed</span></h3>
+        <p class="interaction_text">Keep clicking on the button to steady the bar in the blue zone</p>
         <p class="interaction_status printer_interaction_status pink">Click on the button to pull</p>
         <div class="pulling_status">
           <div class="pull--low"></div>

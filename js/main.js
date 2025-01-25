@@ -7,6 +7,7 @@
   let counter = 5;
   let startCounter = false;
   let startPrinterInteraction = false;
+  let lettersChecked = false;
 
   const $root = document.querySelector(':root');
   let left = -10;
@@ -27,7 +28,10 @@
 
       const $errorNumber = document.querySelector(`.error_state--number`);
       $errorNumber.innerText = `${errorState}`;
-      addEarnings(errorState, 3, 10);
+      if(errorState === 3) {
+        addEarnings(10);
+        showPopup(6, 'Corrector');
+      }
     }
 
   }
@@ -37,6 +41,10 @@
       event.currentTarget.classList.remove('shaking');
       event.currentTarget.classList.remove('shaking_fast');
       letterState += 1
+      if (letterState === 6) {
+        addEarnings(6);
+        showPopup(6, 'Compositor');
+      }
     }
 
     if (event.currentTarget.classList.contains('shaking_fast')) {
@@ -46,12 +54,17 @@
 
     const $letterNumber = document.querySelector(`.letter_state--number`);
     $letterNumber.innerText = `${letterState}`;
-    addEarnings(letterState, 6, 10);
+
+
+
+    console.log(lettersChecked);
   }
 
   const startPulling = () => {
     startPrinterInteraction = true;
-    left = left + 10;
+    if (left < 85) {
+      left = left + 10;
+    }
     let leftValue = `${left}%`;
     $root.style.setProperty('--left', leftValue);
     let hue = getComputedStyle($root).getPropertyValue('--left');
@@ -101,17 +114,43 @@
       left = -10
       startPrinterInteraction = false;
       $status.innerHTML = `Great job, the paper is printed! Click again if you want to print some more`;
-      addEarnings(1, 1, 10);
+      addEarnings(2);
+      showPopup(6, 'Printer');
     }
   }
 
-  const addEarnings = (state, stateNumber, amount) => {
+  const showPopup = (amount, jobName) => {
+    const $popup = document.querySelector(`.earnings_popup`);
+    $popup.classList.remove('visually-hidden');
+    const $jobName = document.querySelector(`.job_name`)
+
+    const $amounts = document.querySelectorAll(`.amount`);
+
+      $jobName.innerText = `${jobName}`;
+
+      $amounts.forEach($amount => {
+        $amount.innerText = `${amount}`;
+
+      })
+
+      setInterval(closePopup, 3000)
+      setInterval(console.log('hi'), 3000)
+
+
+  }
+
+  const closePopup = () => {
+    const $popup = document.querySelector(`.earnings_popup`);
+    $popup.classList.add('visually-hidden');
+  }
+
+  const addEarnings = (amount) => {
     const $earningsNumber = document.querySelector(`.earnings--number`);
 
-    if (state === stateNumber) {
+
       earnings = earnings + amount;
-      console.log('hi')
-    }
+
+
 
     $earningsNumber.innerText = `${earnings}`;
   }
@@ -126,7 +165,6 @@
 
     $words.forEach($word => {
       $word.addEventListener(`click`, checkError);
-
     })
 
     const $letters = document.querySelectorAll(`.shaking_letter`);
@@ -138,7 +176,8 @@
 
     const $pullButton = document.querySelector(`.pull_button`);
     $pullButton.addEventListener(`click`, startPulling);
-
+    const $closeButton = document.querySelector(`.close_popup`);
+    $closeButton.addEventListener(`click`, closePopup);
   }
 
   const init = async () => {

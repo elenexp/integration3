@@ -101,6 +101,7 @@ p {
   padding: 0.5rem;
   padding-bottom: 0;
   position: fixed;
+  z-index: 2;
   width: 100%;
 }
 
@@ -118,8 +119,55 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.balance {
+.earnings {
+  display: flex;
+  border: solid 1.5px var(--color-darkbrown);
   justify-self: center;
+  background-color: var(--color-brown);
+  height: fit-content;
+  padding: var(--whitespace-xs) var(--whitespace-s);
+  gap: var(--whitespace-xs);
+  align-items: center;
+}
+
+.earnings_p {
+  display: flex;
+}
+
+.earnings_popup {
+  border: solid 1.5px var(--color-darkbrown);
+  z-index: 2;
+  right: 5%;
+  position: fixed;
+  top: 10%;
+  background-color: white;
+}
+
+.popup_title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: var(--fontsize-l);
+  font-weight: bold;
+}
+
+.earnings_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--whitespace-s);
+  padding: var(--whitespace-s);
+}
+
+.add_earnings {
+  display: flex;
+  align-items: center;
+  gap: var(--whitespace-xs);
+  background-color: var(--color-brown);
+  width: fit-content;
+  padding: var(--whitespace-xs) var(--whitespace-s);
+}
+
+.close_popup {
+  padding: var(--whitespace-xs);
+  cursor: pointer;
 }
 
 .menu {
@@ -269,6 +317,34 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.corrector_interaction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--whitespace-base);
+}
+
+.lector--wrapper {
+  display: flex;
+  gap: var(--whitespace-s);
+  margin-top: var(--whitespace-l);
+}
+
+.audio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--whitespace-s);
+}
+
+.error_text--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--whitespace-s);
+}
+
+.lector {
+  width: 140px;
 }
 
 .error_text {
@@ -434,7 +510,7 @@ h3 {
 .pull_bar--img {
   width: 35%;
   position: absolute;
-  top: -20%;
+  top: -50%;
   left: var(--left);
 }
 
@@ -601,7 +677,16 @@ h3 {
 
   .corrector_interaction--wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--whitespace-l);
+  }
+
+  .lector--wrapper {
+    flex-direction: column;
+  }
+
+  .lector {
+    width: max-content;
   }
 
   .printer_description_container {
