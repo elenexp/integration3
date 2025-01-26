@@ -9,6 +9,7 @@
   let startPrinterInteraction = false;
   let lettersChecked = false;
   let name = 'employee';
+  let audio = false;
 
   const $root = document.querySelector(':root');
   let left = -10;
@@ -17,7 +18,29 @@
 
   const speakHandler = () => {
     const speech = new SpeechSynthesisUtterance(`In the beginning God created the heavens and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters. And God said, 'Let there be light:' and there was light.`);
-    speechSynthesis.speak(speech);
+    if (audio === false) {
+      speechSynthesis.speak(speech);
+    }
+    if (audio === true) {
+      speechSynthesis.cancel(speech);
+    }
+  }
+
+  const playAudio = () => {
+    audio = true;
+    const $play = document.querySelector(`.play_audio`);
+    $play.classList.add('visually-hidden');
+    const $stop = document.querySelector(`.stop_audio`);
+    $stop.classList.remove('visually-hidden');
+
+  }
+
+  const stopAudio = () => {
+    audio = false;
+    const $play = document.querySelector(`.play_audio`);
+    $play.classList.remove('visually-hidden');
+    const $stop = document.querySelector(`.stop_audio`);
+    $stop.classList.add('visually-hidden');
   }
 
   const checkError = (event) => {
@@ -29,7 +52,7 @@
 
       const $errorNumber = document.querySelector(`.error_state--number`);
       $errorNumber.innerText = `${errorState}`;
-      if(errorState === 3) {
+      if (errorState === 3) {
         addEarnings(6);
         showPopup(6, 'Corrector');
       }
@@ -127,15 +150,15 @@
 
     const $amounts = document.querySelectorAll(`.amount`);
 
-      $jobName.innerText = `${jobName}`;
+    $jobName.innerText = `${jobName}`;
 
-      $amounts.forEach($amount => {
-        $amount.innerText = `${amount}`;
+    $amounts.forEach($amount => {
+      $amount.innerText = `${amount}`;
 
-      })
+    })
 
-      setInterval(closePopup, 3000)
-      setInterval(console.log('hi'), 3000)
+    setInterval(closePopup, 3000)
+    setInterval(console.log('hi'), 3000)
 
 
   }
@@ -146,14 +169,12 @@
   }
 
   const addEarnings = (amount) => {
-    const $earningsNumber = document.querySelector(`.earnings--number`);
+    earnings = earnings + amount;
 
-
-      earnings = earnings + amount;
-
-
-
-    $earningsNumber.innerText = `${earnings}`;
+    const $earningsNumbers = document.querySelectorAll(`.earnings--number`);
+    $earningsNumbers.forEach($earningsNumber => {
+      $earningsNumber.innerText = `${earnings}`;
+    })
   }
 
   const handleSubmitCountry = e => {
@@ -162,16 +183,61 @@
 
     name = `${$search.value}`;
 
-    const $username = document.querySelector(`.username`);
-    $username.innerText = `${name}`;
+    const $usernames = document.querySelectorAll(`.username`);
+    $usernames.forEach($username => {
+      $username.innerText = `${name}`;
+
+    })
+
+    const $form = document.querySelector(`.form-group`);
+    $form.classList.add('visually-hidden');
+    const $text= document.querySelector(`.hiring_question`);
+    $text.innerText = `You're hired, ${name}!`;
+
+
     console.log(name);
   };
 
+  const addHamburger = () => {
+    const $hamburger = document.querySelector(`.hamburger`);
+    $hamburger.classList.remove('visually-hidden');
+    const $menu = document.querySelector(`.menu_list--mobile`);
+    $menu.classList.add('visually-hidden');
+  }
+
+  const seeMenu = () => {
+    const $hamburger = document.querySelector(`.hamburger`);
+    $hamburger.classList.add('visually-hidden');
+    const $closeButton = document.querySelector(`.close_menu`);
+    $closeButton.classList.remove('visually-hidden');
+    const $menu = document.querySelector(`.menu_list--mobile`);
+    $menu.classList.remove('visually-hidden');
+    $menu.classList.add('fixed');
+  }
+
+  const closeMenu = () => {
+    const $hamburger = document.querySelector(`.hamburger`);
+    $hamburger.classList.remove('visually-hidden');
+    const $closeButton = document.querySelector(`.close_menu`);
+    $closeButton.classList.add('visually-hidden');
+    const $menu = document.querySelector(`.menu_list--mobile`);
+    $menu.classList.add('visually-hidden');
+  }
+
+  const removeCssAnimation = () => {
+    const $horizontal = document.querySelector(`.p_horizontal`);
+    $horizontal.classList.remove('horizontal--animation');
+  }
+
   const addListeners = () => {
 
+    const $play = document.querySelector(`.play_audio`);
+    $play.addEventListener(`click`, speakHandler);
+    $play.addEventListener(`click`, playAudio);
 
-    const $soundButton = document.querySelector(`.audio_button`);
-    $soundButton.addEventListener(`click`, speakHandler);
+    const $stop = document.querySelector(`.stop_audio`);
+    $stop.addEventListener(`click`, speakHandler);
+    $stop.addEventListener(`click`, stopAudio);
 
     const $words = document.querySelectorAll(`.word`);
 
@@ -192,14 +258,17 @@
     $closeButton.addEventListener(`click`, closePopup);
 
     document.querySelector(`.name-form`).addEventListener(`submit`, handleSubmitCountry);
+    document.querySelector(`.hamburger`).addEventListener(`click`, seeMenu);
+    document.querySelector(`.close_menu`).addEventListener(`click`, closeMenu);
   }
 
   const init = async () => {
+    removeCssAnimation();
     addListeners();
     setInterval(pullBack, 100);
     setInterval(checkBlueZone, 100);
     setInterval(countDown, 1000);
-    console.log(name);
+    addHamburger();
 
   };
   init();

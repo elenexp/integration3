@@ -14,7 +14,7 @@
     <nav class="nav">
       <ul class="nav_list">
         <li class="nav_item logo"><a class="nav_item--link" href="#0"><img src="./assets/img/logoplantin.png" alt="logo"
-              width="64"></a></li>
+              width="80"></a></li>
         <li class="nav_item earnings">
           Earnings: <span class="earnings--number">0</span><svg width="18" height="19" viewBox="0 0 18 19" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -22,9 +22,20 @@
             <circle cx="9" cy="9.5" r="7" fill="#36372F" />
           </svg>
         </li>
-        <li class="nav_item menu"><a class="nav_item--link" href="#0"></a><img src="./assets/img/hamburger.svg" alt="">
+        <li class="nav_item menu">
+          <ul class="menu_list">
+            <li><a class="menu--button about--button button" href="">About us</a></li>
+            <li><a class="menu--button visit--button button" href="">Visit us</a></li>
+          </ul>
+          <img class="hamburger visually-hidden" src="./assets/img/hamburger.svg" alt="">
+          <img class="close_menu visually-hidden" src="./assets/img/closemenu.svg" alt="">
         </li>
       </ul>
+
+      <div class="menu_list--mobile">
+        <a class="menu--button about--button button" href="">About us</a>
+        <a class="menu--button visit--button button" href="">Visit us</a>
+      </div>
     </nav>
     <div class="header_wrapper">
       <h1 class="header_title title">From Press to Prestige <br>
@@ -33,8 +44,8 @@
       <img src="./assets/img/header_img.svg" alt="">
       <div class="header_bottom--wrapper">
         <p>Explore Plantin’s printing business from an <span class="bold">employee’s view</span></p>
-        <p>Earn <span class="bold">money</span> and <span class="bold">collect</span> your own items by completing each
-          job</p>
+        <p>Earn <span class="bold">money</span> by completing each
+          job with <span class="bold">Plantin</span> as your employer</p>
         <div class="scroll">
           <p>Scroll to discover</p>
           <img class="arrow" src="./assets/img/scrollarrow.svg" alt="" width="70">
@@ -47,6 +58,7 @@
 
   <main>
     <section class="hiring_section">
+
       <h2 class="title hiring_title">Become Plantin’s employee</h2>
       <p class="hiring_question">What’s your name?</p>
       <form action="index.html" method="get" class="name-form">
@@ -56,7 +68,7 @@
             <input type="text" name="value" placeholder="Enter your name here" maxlength="15"
               class="form-control input name" />
           </label>
-          <input type="submit" value="Hire me" class="button-submit button_p" />
+          <input type="submit" value="Hire me" class="button button-submit button_p" />
         </div>
       </form>
       <div class="plantin--wrapper margin">
@@ -87,6 +99,8 @@
             demand</span> for books, maps, and
           other
           printed materials, making it an <span class="bold">ideal place</span> for a printer and publisher.</p>
+        <img class="cloud cloud--left" src="./assets/img/cloud1.svg" alt="cloud">
+        <img class="cloud cloud--right" src="./assets/img/cloud2.svg" alt="cloud">
       </div>
 
       <picture class="antwerp">
@@ -123,7 +137,8 @@
               error</span> goes unnoticed, you’ll be going over every</p>
         </div>
         <div class="horizontal--scroll--wrapper">
-          <p class="p_horizontal--scroll">Detail, pagination, punctuation, accents, spelling, abbreviations, and fonts
+          <p class="p_horizontal p_horizontal--scroll horizontal--animation">Detail, pagination, punctuation, accents,
+            spelling, abbreviations, and fonts
           </p>
           <img class="eye" src="/assets/img/eye.svg" width="435" alt="">
         </div>
@@ -161,16 +176,31 @@
           <div class="lector--wrapper">
             <div class="audio">
               <p class="title">Play the audio to <br>let me read the correct text</p>
-              <svg class="audio_button" width="55" height="55" viewBox="0 0 55 55" fill="none"
+              <svg class="audio_button play_audio" width="55" height="55" viewBox="0 0 55 55" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <circle cx="27.5" cy="27.5" r="25.5" stroke="#B10B3A" stroke-width="4" />
                 <path d="M43 27.5L19 41.7894L19 13.2106L43 27.5Z" fill="#B10B3A" />
+              </svg>
+              <svg class="audio_button stop_audio visually-hidden" width="55" height="55" viewBox="0 0 55 55"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="27.5" cy="27.5" r="25.5" stroke="#B10B3A" stroke-width="4" />
+                <rect x="17" y="17" width="22" height="22" fill="#B10B3A" />
               </svg>
             </div>
             <img class="lector" src="./assets/img/lector.svg" alt="">
           </div>
         </div>
       </section>
+      <div class="plantin--wrapper margin">
+        <img class="plantin" src="./assets/img/plantin.svg" alt="">
+        <div class="name--wrapper">
+          <p class="title plantin_name">Christophe Plantin</p>
+          <p class="title plantin_job pink">Your boss</p>
+        </div>
+        <p class="plantin_speech">“Welcome <span class="username">employee</span>, to the officina plantina located in
+          Antwerp. I am Christophe Plantin, your boss. Your task of the day
+          is to help out at the 3 most vital roles in my printing business. I’ll be around to keep an eye on things”</p>
+      </div>
     </section>
     <section class="job_section job_compositor">
       <div class="job_title--wrapper title">
@@ -182,14 +212,14 @@
       <section class="compositor_description_container">
         <h3 class="visually-hidden">compositor job description</h3>
         <div class="left_letter--wrapper">
-          <img src="./assets/img/r.svg" alt="">
-          <img src="./assets/img/l.svg" alt="">
-          <img src="./assets/img/k.svg" alt="">
-          <img src="./assets/img/a.svg" alt="">
-          <img src="./assets/img/e.svg" alt="">
-          <img src="./assets/img/v.svg" alt="">
-          <img src="./assets/img/n.svg" alt="">
-          <img src="./assets/img/q.svg" alt="">
+          <img class="r" src="./assets/img/r.svg" alt="">
+          <img class="l" src="./assets/img/l.svg" alt="">
+          <img class="k" src="./assets/img/k.svg" alt="">
+          <img class="a" src="./assets/img/a.svg" alt="">
+          <img class="e" src="./assets/img/e.svg" alt="">
+          <img class="v" src="./assets/img/v.svg" alt="">
+          <img class="n" src="./assets/img/n.svg" alt="">
+          <img class="q" src="./assets/img/q.svg" alt="">
         </div>
         <div class="compositor_description--middle">
           <img class="bookframe--top" src="./assets/img/bookframe.svg" alt="">
@@ -218,9 +248,9 @@
           </div>
         </div>
         <div class="right_letter--wrapper">
-          <img src="./assets/img/b.svg" alt="">
+          <img class="b" src="./assets/img/b.svg" alt="">
           <img class="bookframe--right" src="./assets/img/bookframe2.svg" alt="">
-          <img src="./assets/img/l.svg" alt="">
+          <img class="l--right" src="./assets/img/l.svg" alt="">
         </div>
       </section>
       <section class="compositor_interaction margin">
@@ -288,12 +318,23 @@
         <div class="pull_button">
           <p class="button_p">Click to pull</p>
         </div>
-
       </section>
+      <div class="plantin--wrapper margin">
+        <img class="plantin" src="./assets/img/plantin.svg" alt="">
+        <div class="name--wrapper">
+          <p class="title plantin_name">Christophe Plantin</p>
+          <p class="title plantin_job pink">Your boss</p>
+        </div>
+        <p class="plantin_speech">“Welcome <span class="username">employee</span>, to the officina plantina located in
+          Antwerp. I am Christophe Plantin, your boss. Your task of the day
+          is to help out at the 3 most vital roles in my printing business. I’ll be around to keep an eye on things”</p>
+      </div>
     </section>
     <section class="outro_section">
-      <h2 class="title outro_title margin">Name’s total earnings: <br>12 stuivers</h2>
-      <p class="outro_p margin">You earned a total of 12 stuivers today which means you need to work</p>
+      <h2 class="title outro_title margin"><span class="username">Employee</span>’s total earnings: <br><span
+          class="earnings--number">0</span> stuivers</h2>
+      <p class="outro_p margin">You earned a total of <span class="earnings--number">0</span> stuivers today which means
+        you need to work</p>
       <div class="afford_item--wrapper margin">
         <p class="afford_days title">0 more days</p>
         <div class="afford_item">
@@ -323,8 +364,15 @@
         <div class="afford_item">
           <img class="afford_img" src="./assets/img/books.svg" alt="">
           <div class="line"></div>
-          <p class="afford_p">to afford a copy of all the 2,450 editions produced by Christophe Plantin's printing house</p>
+          <p class="afford_p">to afford a copy of all the 2,450 editions produced by Christophe Plantin's printing house
+          </p>
         </div>
+      </div>
+      <div class="museum">
+        <p>The Museum Plantin-Moretus holds a beautiful collection of these books. The Museum Plantin-Moretus holds a
+          beautiful collection of these books. The Museum Plantin-Moretus holds a beautiful collection of these books
+        </p>
+        <p class="button button-cta button_p ">See collection</p>
       </div>
 
     </section>
