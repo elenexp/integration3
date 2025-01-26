@@ -1,13 +1,11 @@
 
 {
-
   let earnings = 0;
   let errorState = 0;
   let letterState = 0;
   let counter = 5;
   let startCounter = false;
   let startPrinterInteraction = false;
-  let lettersChecked = false;
   let name = 'employee';
   let audio = false;
 
@@ -32,7 +30,6 @@
     $play.classList.add('visually-hidden');
     const $stop = document.querySelector(`.stop_audio`);
     $stop.classList.remove('visually-hidden');
-
   }
 
   const stopAudio = () => {
@@ -57,7 +54,6 @@
         showPopup(6, 'Corrector');
       }
     }
-
   }
 
   const stopShaking = (event) => {
@@ -70,18 +66,12 @@
         showPopup(6, 'Compositor');
       }
     }
-
     if (event.currentTarget.classList.contains('shaking_fast')) {
       event.currentTarget.classList.add('shaking');
       event.currentTarget.classList.remove('shaking_fast');
     }
-
     const $letterNumber = document.querySelector(`.letter_state--number`);
     $letterNumber.innerText = `${letterState}`;
-
-
-
-    console.log(lettersChecked);
   }
 
   const startPulling = () => {
@@ -91,9 +81,6 @@
     }
     let leftValue = `${left}%`;
     $root.style.setProperty('--left', leftValue);
-    let hue = getComputedStyle($root).getPropertyValue('--left');
-    console.log(hue);
-    console.log(leftValue);
   }
 
   const pullBack = () => {
@@ -128,9 +115,7 @@
     if (startCounter === true) {
       counter = counter - 1;
     }
-
     checkCountDownComplete();
-    console.log(startPrinterInteraction);
   }
 
   const checkCountDownComplete = () => {
@@ -157,10 +142,7 @@
 
     })
 
-    setInterval(closePopup, 3000)
-    setInterval(console.log('hi'), 3000)
-
-
+    setInterval(closePopup, 3000);
   }
 
   const closePopup = () => {
@@ -186,16 +168,12 @@
     const $usernames = document.querySelectorAll(`.username`);
     $usernames.forEach($username => {
       $username.innerText = `${name}`;
-
     })
 
     const $form = document.querySelector(`.form-group`);
     $form.classList.add('visually-hidden');
     const $text= document.querySelector(`.hiring_question`);
     $text.innerText = `You're hired, ${name}!`;
-
-
-    console.log(name);
   };
 
   const addHamburger = () => {

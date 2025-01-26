@@ -9,8 +9,7 @@
       scrollTrigger: {
         trigger: ".job_corrector",
         start: "top 20%",
-        end: "bottom 80%",
-
+        end: "bottom 70%",
         scrub: 0.5,
         pin: "p_horizontal--scroll",
       },
@@ -23,7 +22,6 @@
         trigger: ".intro_shape",
         start: "top 10%",
         end: "bottom 40%",
-
         scrub: true,
         pin: ".intro_shape",
 
@@ -133,11 +131,9 @@
         start: "top 10%",
         end: "bottom 40%",
         scrub: true,
-
       },
     });
   }
-
 
   const animationIntro = () => {
     shapeSlide();
@@ -149,14 +145,11 @@
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 350px)", () => {
-      horizontalText("110%", "-30%");
-
-
+      horizontalText("90%", "-70%");
     });
 
-
     mm.add("(min-width: 650px)", () => {
-      horizontalText("80%", "-30%");
+      horizontalText("80%", "-60%");
 
 
     });
@@ -168,16 +161,11 @@
 
     mm.add("(min-width: 350px)", () => {
       compositorMiddle();
-
-
     });
-
 
     mm.add("(min-width: 55em)", () => {
       compositorLeft();
       compositorRight();
-
-
     });
 
   }
@@ -271,7 +259,6 @@
     });
 
   }
-
 
   const init = async () => {
     animationIntro();

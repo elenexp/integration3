@@ -12,7 +12,6 @@
   --fontsize-xxl: clamp(2.25rem, 1.5385rem + 3.0769vw, 4rem);
   --fontsize-xxxl: clamp(4rem, 3.0852rem + 3.956vw, 6.25rem);
 
-
   --space-xs: clamp(0.5rem, 0.4167rem + 0.4167vw, 0.75rem);
   --space-s: clamp(2rem, 27.3187rem + -31.6484vw, 20rem);
 
@@ -24,7 +23,6 @@
   --whitespace-xxl: 5rem;
 
   --left: -10%;
-
 }
 
 html {
@@ -129,7 +127,6 @@ p {
   flex-direction: column;
   justify-content: end;
   gap: var(--whitespace-s);
-
 }
 
 .visit--button {
@@ -233,7 +230,6 @@ h3 {
   gap: 1rem;
   margin-top: 1rem;
   color: var(--color-darkpink);
-
 }
 
 .header_bottom--wrapper {
@@ -247,7 +243,6 @@ h3 {
 
 .arrow {
   animation: MoveUpDown 2s linear infinite;
-
 }
 
 .intro {
@@ -262,7 +257,6 @@ h3 {
 }
 
 .title_intro {
-
   border-bottom: 1px solid var(--color-darkbrown);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -301,7 +295,7 @@ h3 {
 .intro_shape {
   max-width: 24rem;
   height: 41.5rem;
-
+  position: relative;
 }
 
 .compositor_shape {
@@ -317,8 +311,6 @@ h3 {
   background-color: var(--color-blue);
   padding-bottom: 2rem;
   padding-top: var(--space-s);
-
-
 }
 
 .job_title--small {
@@ -342,7 +334,6 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .job_title {
@@ -366,9 +357,7 @@ h3 {
 .eye {
   width: 200px;
   z-index: 1;
-
   right: -15%;
-
 }
 
 .description--wrapper {
@@ -619,7 +608,6 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: var(--whitespace-base);
-
 }
 
 .button {
@@ -647,7 +635,7 @@ h3 {
   grid-template-columns: 3fr 7fr;
   grid-template-rows: 1fr auto;
   margin-top: var(--whitespace-xxl);
-    margin-bottom: var(--whitespace-xxl);
+  margin-bottom: var(--whitespace-xxl);
 }
 
 .plantin {
@@ -823,12 +811,10 @@ h3 {
   .bottom_letter {
     width: 6rem;
   }
-
 }
 
 
 @media only screen and (min-width: 39em) {
-
   .left_letter--wrapper,
   .right_letter--wrapper {
     display: block;
@@ -840,16 +826,13 @@ h3 {
   .compositor_shape {
     max-width: 24rem;
     height: 41.5rem;
-
   }
-
 }
 
 
 
 
 @media only screen and (min-width: 55em) {
-
   main,
   footer {
     max-width: 80rem;
@@ -985,7 +968,6 @@ h3 {
     display: flex;
     gap: var(--whitespace-xs);
   }
-
 }
 
 @media only screen and (min-width: 76em) {
@@ -1021,5 +1003,4 @@ h3 {
     max-width: 100rem;
     margin: 0 auto;
   }
-
 }
