@@ -60,7 +60,6 @@
         start: "top 60%",
         end: "bottom 70%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -105,7 +104,7 @@
         start: "top 60%",
         end: "bottom 70%",
         scrub: 1,
-        markers: true,
+
       },
     });
 
@@ -184,17 +183,6 @@
   }
 
   const animationPlantin = () => {
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".plantin--wrapper",
-        start: "top 70%",
-        end: "bottom 70%",
-        scrub: 1,
-
-      },
-    });
-
     const plantins = gsap.utils.toArray('.plantin');
 
     plantins.forEach(element => {
@@ -206,12 +194,9 @@
           start: "top 60%",
           end: "bottom 60%",
           scrub: 1,
-          markers: true,
         },
       });
     })
-
-
     const names = gsap.utils.toArray('.name--wrapper');
 
     names.forEach(element => {
@@ -227,8 +212,6 @@
         },
       });
     })
-
-
     const speeches = gsap.utils.toArray('.plantin_speech');
 
     speeches.forEach(element => {
@@ -245,15 +228,63 @@
     })
   }
 
+  const slideIn = (element, start, end) => {
+
+    gsap.from(element, {
+      x: -600,
+      scrollTrigger: {
+        trigger: element,
+        start: start,
+        end: end,
+        scrub: true,
+
+      },
+    });
+
+  }
+
+  const outroText = (element) => {
+
+    gsap.from(element, {
+      alpha: 0,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 100%",
+        end: "bottom 70%",
+        scrub: true
+      },
+    });
+
+  }
+
+  const outroSection = () => {
+
+    gsap.from('.outro_section', {
+      y: 200,
+      scrollTrigger: {
+        trigger: '.outro_section',
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+
+      },
+    });
+
+  }
+
 
   const init = async () => {
     animationIntro();
     animationCorrector();
     animationCompositor();
     animationPlantin();
-
-
-
+    slideIn(".corrector_title", "top 80%", "bottom 30%");
+    slideIn(".printer_title", "top 80%", "bottom 30%");
+    outroText('.afford--0');
+    outroText('.afford--7');
+    outroText('.afford--66');
+    outroText('.afford--20417');
+    outroSection();
   };
   init();
 }

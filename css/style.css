@@ -763,6 +763,10 @@ h3 {
   height: 10rem;
 }
 
+.hamburger {
+  background-color: var(--color-bg);
+}
+
 @media (prefers-reduced-motion) {
   .horizontal--animation {
     animation: none;
