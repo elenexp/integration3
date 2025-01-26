@@ -753,6 +753,12 @@ h3 {
 
 .hamburger {
   background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.close_menu {
+  background-color: white;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion) {
@@ -815,6 +821,7 @@ h3 {
 
 
 @media only screen and (min-width: 39em) {
+
   .left_letter--wrapper,
   .right_letter--wrapper {
     display: block;
@@ -833,6 +840,7 @@ h3 {
 
 
 @media only screen and (min-width: 55em) {
+
   main,
   footer {
     max-width: 80rem;
