@@ -537,6 +537,145 @@ h3 {
   scale: 1.1;
 }
 
+.name {
+  width: 300px;
+  height: 50px;
+}
+
+.hiring_section {
+  height: 100vh;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--whitespace-l);
+}
+
+.hiring_title {
+  text-align: center;
+}
+
+.hiring_question {
+  font-size: var(--fontsize-l);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--whitespace-base);
+
+}
+
+.button-submit {
+  border: none;
+  width: fit-content;
+  background-color: var(--color-darkpink);
+  align-self: center;
+  padding: var(--whitespace-s) var(--whitespace-l);
+}
+
+.button-submit:hover {
+  cursor: pointer;
+}
+
+.plantin--wrapper {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-rows: 1fr auto;
+}
+
+.plantin {
+  align-self: self-end;
+  justify-self: center;
+  padding-left: var(--whitespace-s);
+}
+
+.plantin_speech {
+  grid-column: 1 / span 2;
+  background-color: white;
+  border: solid 2px var(--color-darkbrown);
+  border-radius: 20px;
+  padding: var(--whitespace-base);
+  max-width: 700px;
+}
+
+.name--wrapper {
+  padding-left: var(--whitespace-s);
+}
+
+.plantin_name {
+  font-size: var(--fontsize-l);
+}
+
+.plantin_job {
+  font-size: var(--fontsize-m);
+  font-style: italic;
+}
+
+.outro_title {
+  margin-top: 10rem;
+}
+
+.outro_p,
+.afford_days,
+.afford_days--big,
+.outro_title {
+  text-align: center;
+}
+
+.outro_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-darkpink);
+  color: var(--color-bg);
+  border-top-left-radius: 1000px;
+  border-top-right-radius: 1000px;
+  gap: var(--whitespace-l);
+}
+
+.afford_item {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: var(--whitespace-s);
+}
+
+.afford_item--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--whitespace-base);
+}
+
+.afford_days {
+  font-size: var(--fontsize-xl);
+  line-height: 1.2;
+}
+
+.afford_days--big {
+  font-size: var(--fontsize-xxl);
+  line-height: 1;
+}
+
+.afford_img {
+  justify-self: end;
+}
+
+.afford_p {
+  max-width: 30rem;
+}
+
+.line {
+  background-color: var(--color-bg);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-darkpink);
+  color: var(--color-bg);
+}
 
 @keyframes shake {
   0% {
@@ -604,7 +743,8 @@ h3 {
 
 @media only screen and (min-width: 55em) {
 
-  main {
+  main,
+  footer {
     max-width: 80rem;
     margin: 0 auto;
   }
@@ -696,6 +836,32 @@ h3 {
 
   .book {
     grid-column: 2;
+  }
+
+  .plantin_speech {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .plantin {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    padding-left: 0;
+  }
+
+  .name--wrapper {
+    padding-left: 0;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: end;
+    padding: var(--whitespace-base);
+  }
+
+  .socials {
+    display: flex;
+    gap: var(--whitespace-xs);
   }
 
 }

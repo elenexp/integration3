@@ -8,6 +8,7 @@
   let startCounter = false;
   let startPrinterInteraction = false;
   let lettersChecked = false;
+  let name = 'employee';
 
   const $root = document.querySelector(':root');
   let left = -10;
@@ -29,7 +30,7 @@
       const $errorNumber = document.querySelector(`.error_state--number`);
       $errorNumber.innerText = `${errorState}`;
       if(errorState === 3) {
-        addEarnings(10);
+        addEarnings(6);
         showPopup(6, 'Corrector');
       }
     }
@@ -115,14 +116,14 @@
       startPrinterInteraction = false;
       $status.innerHTML = `Great job, the paper is printed! Click again if you want to print some more`;
       addEarnings(2);
-      showPopup(6, 'Printer');
+      showPopup(2, 'Printer');
     }
   }
 
   const showPopup = (amount, jobName) => {
     const $popup = document.querySelector(`.earnings_popup`);
     $popup.classList.remove('visually-hidden');
-    const $jobName = document.querySelector(`.job_name`)
+    const $jobName = document.querySelector(`.job_name`);
 
     const $amounts = document.querySelectorAll(`.amount`);
 
@@ -155,6 +156,17 @@
     $earningsNumber.innerText = `${earnings}`;
   }
 
+  const handleSubmitCountry = e => {
+    e.preventDefault();
+    const $search = document.querySelector(`.name`);
+
+    name = `${$search.value}`;
+
+    const $username = document.querySelector(`.username`);
+    $username.innerText = `${name}`;
+    console.log(name);
+  };
+
   const addListeners = () => {
 
 
@@ -178,6 +190,8 @@
     $pullButton.addEventListener(`click`, startPulling);
     const $closeButton = document.querySelector(`.close_popup`);
     $closeButton.addEventListener(`click`, closePopup);
+
+    document.querySelector(`.name-form`).addEventListener(`submit`, handleSubmitCountry);
   }
 
   const init = async () => {
@@ -185,6 +199,7 @@
     setInterval(pullBack, 100);
     setInterval(checkBlueZone, 100);
     setInterval(countDown, 1000);
+    console.log(name);
 
   };
   init();

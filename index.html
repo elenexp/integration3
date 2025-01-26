@@ -46,25 +46,30 @@
 
 
   <main>
-    <div class="earnings_popup visually-hidden">
-      <div class="close_popup">
-        <svg width="35" height="35" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 18L18 1" stroke="#36372F" stroke-width="1" />
-          <path d="M18 18L1 1" stroke="#36372F" stroke-width="1" />
-        </svg>
-      </div>
-      <div class="earnings_content">
-        <p class="popup_title"><span class="job_name">Corrector</span> job completed!</p>
-        <p>You earned <span class="amount">12</span> stuivers</p>
-        <div class="add_earnings">
-          <p>+ <span class="amount">12</span></p>
-          <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="9.5" r="8.5" stroke="#36372F" />
-            <circle cx="9" cy="9.5" r="7" fill="#36372F" />
-          </svg>
+    <section class="hiring_section">
+      <h2 class="title hiring_title">Become Plantin’s employee</h2>
+      <p class="hiring_question">What’s your name?</p>
+      <form action="index.html" method="get" class="name-form">
+        <div class="form-group">
+          <label>
+            <p>Name</p>
+            <input type="text" name="value" placeholder="Enter your name here" maxlength="15"
+              class="form-control input name" />
+          </label>
+          <input type="submit" value="Hire me" class="button-submit button_p" />
         </div>
+      </form>
+      <div class="plantin--wrapper margin">
+        <img class="plantin" src="./assets/img/plantin.svg" alt="">
+        <div class="name--wrapper">
+          <p class="title plantin_name">Christophe Plantin</p>
+          <p class="title plantin_job pink">Your boss</p>
+        </div>
+        <p class="plantin_speech">“Welcome <span class="username">employee</span>, to the officina plantina located in
+          Antwerp. I am Christophe Plantin, your boss. Your task of the day
+          is to help out at the 3 most vital roles in my printing business. I’ll be around to keep an eye on things”</p>
       </div>
-    </div>
+    </section>
     <section class="intro">
       <div class="intro_title--wrapper">
         <h2 class="title title_intro pink">Antwerp, 1550</h2>
@@ -286,8 +291,79 @@
 
       </section>
     </section>
+    <section class="outro_section">
+      <h2 class="title outro_title margin">Name’s total earnings: <br>12 stuivers</h2>
+      <p class="outro_p margin">You earned a total of 12 stuivers today which means you need to work</p>
+      <div class="afford_item--wrapper margin">
+        <p class="afford_days title">0 more days</p>
+        <div class="afford_item">
+          <img class="afford_img" src="./assets/img/food.svg" alt="">
+          <div class="line"></div>
+          <p class="afford_p">to afford basic necessities</p>
+        </div>
+      </div>
+      <div class="afford_item--wrapper margin">
+        <p class="afford_days title">7 more days</p>
+        <div class="afford_item">
+          <img class="afford_img" src="./assets/img/book.svg" alt="">
+          <div class="line"></div>
+          <p class="afford_p">to afford a standard book</p>
+        </div>
+      </div>
+      <div class="afford_item--wrapper margin">
+        <p class="afford_days title">66 more days</p>
+        <div class="afford_item">
+          <img class="afford_img" src="./assets/img/map.svg" alt="">
+          <div class="line"></div>
+          <p class="afford_p">to afford a colored map</p>
+        </div>
+      </div>
+      <div class="afford_item--wrapper margin">
+        <p class="afford_days--big title">20 417 more days</p>
+        <div class="afford_item">
+          <img class="afford_img" src="./assets/img/books.svg" alt="">
+          <div class="line"></div>
+          <p class="afford_p">to afford a copy of all the 2,450 editions produced by Christophe Plantin's printing house</p>
+        </div>
+      </div>
 
+    </section>
+    <div class="earnings_popup visually-hidden">
+      <div class="close_popup">
+        <svg width="35" height="35" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 18L18 1" stroke="#36372F" stroke-width="1" />
+          <path d="M18 18L1 1" stroke="#36372F" stroke-width="1" />
+        </svg>
+      </div>
+      <div class="earnings_content">
+        <p class="popup_title"><span class="job_name">Corrector</span> job completed!</p>
+        <p>You earned <span class="amount">12</span> stuivers</p>
+        <div class="add_earnings">
+          <p>+ <span class="amount">12</span></p>
+          <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9.5" r="8.5" stroke="#36372F" />
+            <circle cx="9" cy="9.5" r="7" fill="#36372F" />
+          </svg>
+        </div>
+      </div>
+    </div>
   </main>
+  <footer class="footer">
+    <div class="margin">
+      <h3 class="title">MUSEUM PLANTIN-MORETUS</h3>
+      <p>Vrijdagmarkt 22<br>
+        2000 Antwerpen <br>
+        tel. +32 (0)3 221 14 50 <br>
+        museum.plantin.moretus@antwerpen.be</p>
+    </div>
+    <div class="socials margin">
+      <img src="./assets/img/icon/brand-instagram.svg" alt="">
+      <img src="./assets/img/icon/logo-facebook.svg" alt="">
+      <img src="./assets/img/icon/logo-pinterest.svg" alt="">
+
+    </div>
+
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script type="module" src="./js/main.js"></script>
